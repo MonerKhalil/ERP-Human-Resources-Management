@@ -1,0 +1,78 @@
+.Cookies {
+    position: fixed ;
+    right: 0 ;
+    bottom: 5rem ;
+    max-width: 34.5rem ;
+    width: 100% ;
+    border-radius: $BorderRadiusValue ;
+    transform: translateX(100%);
+    padding: 1.5rem 2.5rem 2.2rem;
+    box-shadow: 0 0 $DarkShadow ;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+
+    &__Header {
+        display: flex;
+        align-items: center;
+        column-gap: 1.5rem;
+        color: $PrimaryColor-Project;
+        margin-bottom: 1.5rem;
+    }
+
+    &__Icon {
+        font-size: 3.2rem;
+    }
+
+    &__Content {
+        margin-bottom: 2.5rem;
+    }
+
+    &__ReadMore {
+        color : $TertiaryColor-Project ;
+
+        &:hover {
+            color : $WhiteColor ;
+        }
+    }
+
+    &__Buttons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &--Dark {
+        background-color : $BackGroundColor_Extra-4;
+
+        .Cookies {
+
+        }
+    }
+
+    &.Show {
+        right: 2rem ;
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    @include ScreenResponsive(Phone_Portrait) {
+        right: 50% ;
+        transform: translateX(50%);
+    }
+}
+
+@include Language(Arabic) {
+
+    .Cookies {
+        right: initial ;
+        left : 0 ;
+
+        &.Show {
+            right: initial ;
+            left : 2rem ;
+        }
+    }
+}

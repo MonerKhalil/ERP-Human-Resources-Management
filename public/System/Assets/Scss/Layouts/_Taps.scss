@@ -1,0 +1,157 @@
+
+.Taps {
+    position: relative;
+
+    &__List {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        //margin-bottom: 2rem;
+        column-gap: 2.5rem;
+    }
+
+    &__Item {
+        position: relative;
+        padding: 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .3s;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0 ;
+            left: 0 ;
+            transform: translateY(50%);
+            width: 100% ;
+            height: 2px ;
+            border-radius: 10px;
+            background-color: transparent;
+            transition: all .3s;
+        }
+
+        &.NotClickable {
+            cursor: default;
+        }
+
+        &--Icon {
+            display: flex;
+            align-items: center;
+            gap : .5rem ;
+        }
+    }
+
+    &__Content {
+
+    }
+
+    &__Panel {
+        display: none;
+
+        &.Active {
+            display: block;
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .Taps {
+
+        &__List {
+            border-bottom: 1px solid $SeparateBorderColor;
+        }
+
+        &__Item {
+            color : $GrayColor ;
+
+            &:not(.Active):hover {
+                color: $BlackColor ;
+            }
+
+            &.NotClickable {
+
+                &:not(.Active):hover {
+                    color: $GrayColor ;
+                }
+            }
+
+            &.Error {
+                color : $DangerColor ;
+
+                &:hover {
+                    color: $DangerColor ;
+                }
+
+                &.Active {
+                    color: $DangerColor;
+
+                    &::after {
+                        background-color: $DangerColor;
+                    }
+                }
+            }
+
+            &.Active {
+                color: $TertiaryColor-Project;
+
+                &::after {
+                    background-color: $TertiaryColor-Project;
+                }
+            }
+        }
+
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .Taps {
+
+        &__List {
+            border-bottom: 1px solid $SeparateBorderColor;
+        }
+
+        &__Item {
+            color : $SecondaryColor-Project ;
+
+            &:hover {
+                color: $WhiteColor;
+            }
+
+            &.NotClickable {
+
+                &:hover {
+                    color: $SecondaryColor-Project;
+                }
+            }
+
+            &.Error {
+                color : $DangerColor ;
+
+                &:hover {
+                    color: $DangerColor ;
+                }
+
+                &.Active {
+                    color: $DangerColor;
+
+                    &::after {
+                        background-color: $DangerColor;
+                    }
+                }
+            }
+
+            &.Active {
+                color: $TertiaryColor-Project;
+
+                &::after {
+                    background-color: $TertiaryColor-Project;
+                }
+            }
+        }
+
+    }
+}

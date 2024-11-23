@@ -1,0 +1,40 @@
+
+#Wrapper {}
+
+.MainContent {
+    position: relative;
+    min-height: calc(100vh - 5rem);
+    z-index: $BasicLayer;
+    transition: all $HeaderMenu;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $BackGroundColor_Extra-2 ;
+        visibility: hidden;
+        opacity: 0 ;
+        z-index: $TopLayer;
+        transition: all $HeaderMenu;
+    }
+
+    &__Section {
+        padding : 1.5rem 0;
+
+        &--Login {
+            padding : 0 ;
+        }
+    }
+
+    .RowPage {
+        display: flex;
+        flex-wrap: wrap;
+
+        > * {
+            flex : 1 ;
+        }
+    }
+}

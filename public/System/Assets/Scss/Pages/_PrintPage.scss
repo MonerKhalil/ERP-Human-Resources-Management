@@ -1,0 +1,183 @@
+
+.PrintPage {
+
+    &__CompanyInfo {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem ;
+
+        .ImageCompany {
+            width: 10rem;
+
+            > img {
+                width: 100% ;
+                border-radius: 50% ;
+            }
+        }
+
+        .DescriptionCompany {
+            flex : 1 ;
+
+            .Text {
+                display: flex;
+                flex-wrap: wrap;
+
+                > * {
+                    width: 50% ;
+                    padding: 1rem ;
+                    margin-bottom: 0.5rem;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    &__Data {
+
+    }
+
+    &__TextEditorContent {
+        padding: 1.5rem 1rem ;
+    }
+
+    .ListData {
+
+        &--CustomPrint {
+
+            .ListData {
+
+                &__Head {
+                    margin-bottom: 1rem ;
+                }
+
+                &__Item {
+
+                    .Data_Col {
+                        padding: 1.5rem 1rem ;
+                    }
+                }
+            }
+        }
+    }
+
+    .FooterPage {
+
+        .RowFooter {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+        }
+    }
+
+    .Report {
+
+        .Table {
+
+            &__Table {
+
+                .GroupRows {
+
+                    &__SubRows {
+                        display: table-row;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .PrintPage {
+
+        &__CompanyInfo {
+
+            .DescriptionCompany {
+
+                .Text {
+
+                    > * {
+                        color : #103458 ;
+                    }
+                }
+            }
+        }
+
+        &__TextEditorContent {
+            color : $WhiteColor ;
+
+            .TextEditorContent {
+
+                &__Content {
+
+                    .Content {
+                        background-color: $BackGroundColor_Extra-4;
+                    }
+                }
+            }
+        }
+
+        .ListData {
+
+            &--CustomPrint {
+
+                .ListData {
+
+                    &__Item {
+                        color : $BlackColor ;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .PrintPage {
+
+        &__CompanyInfo {
+
+            .DescriptionCompany {
+
+                .Text {
+
+                    > * {
+                        color : $SecondaryColor-Project ;
+                    }
+                }
+            }
+        }
+
+        &__TextEditorContent {
+            color : $WhiteColor ;
+
+            .TextEditorContent {
+
+                &__Content {
+
+                    .Content {
+                        background-color: $BackGroundColor_Extra-4;
+                    }
+                }
+            }
+        }
+
+        .ListData {
+
+            &--CustomPrint {
+
+                .ListData {
+
+                    &__Item {
+                        color : $WhiteColor ;
+                    }
+                }
+            }
+        }
+    }
+
+}

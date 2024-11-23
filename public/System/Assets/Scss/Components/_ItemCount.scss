@@ -1,0 +1,28 @@
+
+.ItemCount {
+    position: relative ;
+
+    &__Selector {
+
+        .Selector {
+            width: 15rem ;
+
+            &__Main {
+                padding: .5rem 2rem ;
+                outline: 1px solid #415772;
+            }
+
+            &__WordLabel {
+                font-size: 1.2rem ;
+            }
+
+            &.Selected {
+
+                .Selector__WordLabel {
+                    display: none  ;
+                }
+            }
+        }
+
+    }
+}

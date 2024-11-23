@@ -1,0 +1,113 @@
+
+/*-----------------------------
+  Project Fonts
+-----------------------------*/
+$PrimaryFontFamily : Roboto , sans-serif ;
+$SecondaryFontFamily : Nunito , sans-serif ;
+
+/*-----------------------------
+  Project Colors
+-----------------------------*/
+$PrimaryColor-Project : #3F51B5 ;
+$TertiaryColor-Project : #10C093 ;
+
+// Theme Dark
+$SecondaryColor-Project : #b6c6e3 ;
+$BodyColor : #242C3F;
+$SeparateBorderColor: #23364e ;
+$SeparateBorderColor_Extra-1: #96A2B4 ;
+$SeparateBorderColor_Extra-2: #e5e9f2 ;
+$SeparateBorderColor_Extra-3: #35393f ;
+$TextColor : #96A2B4 ; //Form
+$BackGroundColor : #1A202E ; //Card
+$BackGroundColor_Extra-2 : rgba($BackGroundColor , .6) ; //Loader Data
+$BackGroundColor_Extra-3 : #1B202D ; //Label Focus
+$BackGroundColor_Extra-4 : #1B2633 ; //Secondary Back Card
+$WhiteColor_Extra-2 : #dadada ;
+
+// Theme Light
+$SecondaryColor-Project-Light : #444 ;
+$BodyColor-Light : #ECF0F4;
+$TextColor-Light : #2c323f ; //Form
+
+
+
+// Standard Manual
+$DangerColor : #f93542 ;
+$SuccessColor : #51cb53 ;
+$InfoColor : #38a9e1 ;
+$WarningColor : #d9a242 ;
+
+/*-----------------------------
+  Theme Colors
+-----------------------------*/
+$PrimaryColor-Theme : #fff ;
+$SecondaryColor-Theme : #fff ;
+
+/*-----------------------------
+  Standard Colors
+-----------------------------*/
+$WhiteColor: #fff;
+$BlackColor: #000;
+$BlueColor: #165df5;
+$YellowColor: #ffc329;
+$AquamarineColor: #17e79b;
+$OrangeColor: #f28e1c;
+$RedColor: #f93542;
+$GrayColor: #6c7a87;
+$LightGrayColor: #969ca2;
+$DarkGrayColor: #52595f;
+$GreenColor: #19a389;
+$SeaColor: #4d81f7;
+$GoldColor: #ffce53;
+$PurpleColor: #6f5fa6;
+
+/*-----------------------------
+  Box Shadows
+-----------------------------*/
+$PrimaryShadow : 1.5rem 0 rgba($BlackColor , .25) ;
+$LightShadow : 1.5rem 0 rgba($BlackColor , .25) ;
+$DarkShadow :  1.5rem 0 rgba($BlackColor , .35) ;
+
+/*-----------------------------
+  Z-index Layer
+-----------------------------*/
+$BasicLayer : 0 ;
+$VeryLowLayer : 1 ;
+$LowLayer : 2 ;
+$MiddleLayer : 3 ;
+$TopLayer : 4 ;
+$VeryTopLayer : 5 ;
+
+/*-----------------------------
+  Transitions
+-----------------------------*/
+$HeaderMenu : .4s ;
+
+/*-----------------------------
+  Maps Used
+-----------------------------*/
+$GridGaps : (
+    "0" : 0 ,
+    "1" : 1rem ,
+    "1-5" : 1.5rem ,
+    "2" : 2rem ,
+    "3" : 3rem ,
+);
+
+/*-----------------------------
+  List Used
+-----------------------------*/
+$JustifyList : flex-start , flex-end
+, space-between , space-around , space-evenly , center ;
+
+$AlignItem : center ;
+
+/*-----------------------------
+  Values Used
+-----------------------------*/
+$InfinityValue : 10 ;
+$MenuCollapsed : 7 ;
+$MenuExpansion : 26 ;
+$BorderRadiusValue : 5px ;
+$GridColumns : 12 ;

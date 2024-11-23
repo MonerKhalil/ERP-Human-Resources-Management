@@ -1,0 +1,202 @@
+
+.MultiSelector {
+    position: relative;
+    width : 100% ;
+    font-size: 1.5rem ;
+
+    &__Main {
+        position: relative;
+        display: block ;
+        width: 100%;
+        padding: 1.1rem 2rem;
+        outline: 1px solid $SeparateBorderColor_Extra-1;
+        border-radius: $BorderRadiusValue ;
+        cursor: pointer;
+        transition: all .3s;
+    }
+
+    &__WordLabel {
+        font-weight: 700;
+        transition: all .3s;
+    }
+
+    &__WordChoose {
+        display: none;
+        font-size: 1.5rem;
+    }
+
+    &__Options {
+        position: absolute;
+        top : 0 ;
+        left : 0 ;
+        width: 100% ;
+        max-height: 0;
+        border-radius: $BorderRadiusValue ;
+        background-color: #000 ;
+        visibility: hidden;
+        opacity: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-shadow: 0 0 $DarkShadow;
+        transition: all .3s ;
+
+        @include ScrollBar() ;
+    }
+
+    &__Option {
+
+    }
+
+    &__CheckBox {
+        @extend .CheckBoxNormal ;
+        width: 1.9rem !important;
+        height: 1.9rem !important;
+
+        > .material-icons {
+            font-size: 1.7rem !important;
+            left: 0 !important;
+            top: 0 !important;
+        }
+    }
+
+    &__InputCheckBox {
+
+        &:checked + .MultiSelector__Label .MultiSelector__CheckBox {
+            background-color: $TertiaryColor-Project;
+
+            > .material-icons {
+                display: inline-block;
+                color : $WhiteColor;
+            }
+        }
+    }
+
+    &__Label {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background-color: $PrimaryColor-Project;
+            color : $WhiteColor ;
+
+            .MultiSelector__CheckBox {
+                border-color: $WhiteColor;
+            }
+        }
+    }
+
+    &__Arrow {
+        position: absolute;
+        top : 50% ;
+        right : 1rem ;
+        transform: translateY(-50%);
+    }
+
+    &.Open {
+
+        .MultiSelector {
+
+            &__Main {
+                z-index: $LowLayer;
+            }
+
+            &__Options {
+                top : calc(100% + .5rem) ;
+                visibility: visible;
+                opacity: 1;
+                max-height: 21rem;
+                z-index: $VeryLowLayer;
+            }
+        }
+    }
+
+    &.Selected {
+
+        .MultiSelector {
+
+            &__WordLabel {
+                position: absolute ;
+                top : 0 ;
+                left : 1.5rem ;
+                transform: translateY(-50%);
+                font-size: 1.3rem;
+                padding: 0 0.5rem;
+            }
+
+            &__WordChoose {
+                display: initial;
+            }
+        }
+    }
+}
+
+@include Language(Arabic) {
+
+    .MultiSelector {
+
+        &__Arrow {
+            right : initial ;
+            left : 1rem ;
+        }
+
+        &.Selected {
+
+            .MultiSelector {
+
+                &__WordLabel {
+                    left : initial ;
+                    right : 1.5rem ;
+                }
+            }
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .MultiSelector {
+
+        &__WordChoose {
+            color : #0e0e0e ;
+        }
+
+        &.Selected {
+
+            .MultiSelector {
+
+                &__WordLabel {
+                    background : linear-gradient(to bottom, #fff 44%, #F5F5F5 50%) ;
+                }
+            }
+        }
+
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .MultiSelector {
+
+        &__WordChoose {
+            color : $TextColor ;
+        }
+
+        &.Selected {
+
+            .MultiSelector {
+
+                &__WordLabel {
+                    background : $BackGroundColor ;
+                }
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,36 @@
+
+.TextEditorContent {
+
+    &__Content {
+
+        ul {
+            list-style: initial ;
+        }
+    }
+}
+
+@include Language(Arabic) {
+
+    .TextEditorContent {
+
+        &__Content {
+
+            li {
+                margin-right: 1.7rem ;
+            }
+        }
+    }
+}
+
+@include Language(English) {
+
+    .TextEditorContent {
+
+        &__Content {
+
+            li {
+                margin-left: 1.7rem ;
+            }
+        }
+    }
+}

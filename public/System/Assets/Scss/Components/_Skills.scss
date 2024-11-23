@@ -1,0 +1,27 @@
+
+.Skills {
+    position: relative;
+
+    &__List {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem ;
+
+        .Skill {
+            font-size: 1.2rem;
+            background-color: $PrimaryColor-Project;
+            padding: 0 1rem;
+            border-radius: $BorderRadiusValue;
+            color : $WhiteColor ;
+        }
+    }
+
+    @include ScreenResponsive(Phone_Landscape) {
+
+        &__List {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+}

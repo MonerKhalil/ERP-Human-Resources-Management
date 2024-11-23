@@ -1,0 +1,32 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "Sass_Compiler": "sass ./public/System/Assets/Scss/Main.scss ./public/System/Assets/CSS/Style.css -w",
+        "Build__CssConcat": "concat -o ./CSS/Style.Concat.css ./Packages/Icons/all.min.css ./CSS/Style.css ",
+        "Build__CssPrefix": "postcss --use autoprefixer -b 'last 10 version' ./CSS/Style.Concat.css ./CSS/Style.Prefix.css ",
+        "Build__CssCompress": "node-sass ./CSS/Style.Prefix.css ./CSS/Style.css --output-style compressed",
+        "Build:Css": "npm-run-all Build__SassCompiler Build__CssConcat Build__CssPrefix Build__CssCompress"
+    },
+    "devDependencies": {
+        "axios": "^0.25",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "node-sass": "^8.0.0",
+        "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.7",
+        "flatpickr": "^4.6.13",
+        "jquery": "^3.6.4",
+        "jquery-validation": "^1.19.5",
+        "sass": "^1.60.0",
+        "trumbowyg": "^2.27.3"
+    }
+}

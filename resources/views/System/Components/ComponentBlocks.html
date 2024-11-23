@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Blocks</title>
+    </head>
+    <body>
+
+        <!--  Start Logo System  -->
+            <div class="Logo">
+            <a href="#" title="ERP Epic">
+                <img src="{{asset("System/Assets/Images/Logo.png")}}"
+                alt="#" class="Logo__Image">
+                <span class="Logo__SystemName">ERP Epic</span>
+            </a>
+        </div>
+        <!--  End Logo System  -->
+
+        <!--  Start Form  -->
+            <form class="Form">
+            <div class="Form__Group">
+                <div class="Form__Input">
+                    <div class="Input__Area">
+                        <input id="UserName" class="Input__Field" type="text"
+                               name="UserName" placeholder="User Name">
+                        <label class="Input__Label" for="UserName">User Name</label>
+                    </div>
+                    {{--   Message Error    --}}
+                </div>
+            </div>
+            <div class="Form__Group">
+                <div class="Form__Input Form__Input--Password">
+                    <div class="Input__Area">
+                        <input id="Password" class="Input__Field"
+                               type="password" name="password" placeholder="Password">
+                        <label class="Input__Label" for="Password">Password</label>
+                        <i class="material-icons Input__Icon">visibility</i>
+                    </div>
+                </div>
+            </div>
+            <div class="Form__Row">
+                <div class="Form__Group">
+                    <div class="Form__CheckBox">
+                        <div class="CheckBox__Area">
+                            <input type="checkbox" id="RememberMe"
+                                   class="CheckBox__Input">
+                            <label class="CheckBox__Label" for="RememberMe">
+                                                            <span class="IconChecked">
+                                                            <i class="material-icons ">
+                                                            check_small
+                                                        </i>
+                                                        </span>
+                                <span class="TextCheckBox">Remember Me</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="Form__Group">
+                    <div class="Form__Link">
+                        <div class="Link__Area">
+                            <a href="#" class="Link__Anchor">Forget Password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Form__Group">
+                <div class="Form__Error">
+                    <ul class="Error__Area">
+                        <li><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eligendi error, est expedita incidunt ipsa laborum, libero magni nam nostrum obcaecati officia officiis omnis, quae quasi qui quis repellendus suscipit!</small></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Form__Group">
+                <div class="Form__Button">
+                    <button class="Button Send"
+                            type="submit">Login To System</button>
+                </div>
+            </div>
+        </form>
+        <!--  End Form  -->
+
+        <!--  Start Breadcrumb  -->
+            @include('System.Components.breadcrumb' , [
+            'mainTitle' => 'Add User' ,
+            'path' => [['Home' , '#'] , ['Page']] ,
+            'summery' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
+            ])
+            <!--  End Breadcrumb  -->
+
+            <!--  Start Search Form  -->
+            @include("System.Components.searchForm" , [
+            'InfoForm' => ["Route" => "Dummy" , "Method" => "Post"] ,
+            'SearchForm' => ['Placeholder' => 'Dummy' , 'Name' => 'Dummy' , 'Value' => 'Dummy'] ,
+            'FilterForm' => [ ['Type' => 'Input' , 'Info' =>
+            ['Name' => "Dummy" , 'Placeholder' => "Dummy" , 'Value' => "Dummy"] ,
+            'Error' => "Error Message"] ]
+            ])
+        <!--  End Search Form  -->
+
+        <!--  Start Drag Drop  -->
+
+            <div class="DragDrop DragDrop__Zone ListData__Content" data-namesItem="Permissions">
+            @foreach($permissions as $Permission)
+            <div class="DragDrop DragDrop__Item ListData__Item
+                                                                            ListData__Item--Action" data-nameItem="Permissions">
+                <input type="text" name="permissions[]"
+                       value="{{$Permission["id"]}}" hidden>
+                <div class="Data_Col">
+                                                                        <span class="Data_Label">
+                                                                            {{$Permission["name"]}}
+                                                                        </span>
+                </div>
+                <div class="Data_Col Data_Col--End">
+                    <i class="material-icons">
+                        sync_alt
+                    </i>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <!--  End Drag Drop  -->
+
+        <!--  Start MultiSelector  -->
+
+        @include("System.Components.multiSelector" , [
+        'Label' => "Selector Multi" ,
+        'Options' => [
+        [
+        'Value' => "1" , 'Label' => '1' , "Name" => "1"
+        ] , [
+        'Value' => "2" , 'Label' => '2' , "Name" => "2"
+        ]
+        ]
+        ])
+
+        <!--  End MultiSelector  -->
+
+    </body>
+</html>

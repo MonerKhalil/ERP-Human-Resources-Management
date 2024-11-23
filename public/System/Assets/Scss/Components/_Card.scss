@@ -1,0 +1,247 @@
+
+.Card {
+    position: relative;
+    width: 100% ;
+    border-radius: 10px ;
+
+    &__CenterButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        &-hidden {
+            display: none;
+        }
+    }
+
+    &__Inner {
+        padding: 2.4rem ;
+
+        &.p0 {
+            padding: 0 ;
+        }
+
+        &.pl0 {
+            padding-left: 0;
+        }
+
+        &.pr0 {
+            padding-right: 0;
+        }
+
+        &.pt0 {
+            padding-top: 0;
+        }
+
+        &.pb0 {
+            padding-bottom: 0;
+        }
+
+        &.py0 {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        &.px0 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        &.py1 {
+            padding-top: 1rem ;
+            padding-bottom: 1rem ;
+        }
+    }
+
+    &__Content {
+
+    }
+
+    &__Body {
+
+    }
+
+    &__ToolsGroup {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__SearchTools {
+
+        .SearchTools {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            &__Separate {
+                margin : 0 1rem;
+            }
+
+            &__FilterIcon.Note ,
+            &__SearchIcon.Note {
+                position: relative;
+
+                &::after {
+                    content: "" ;
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    &__Pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & {
+        &__Header {
+            margin-bottom: 1.5rem;
+        }
+
+        &__Footer {
+
+        }
+
+        &__Title {
+            text-transform: capitalize;
+        }
+
+        &__Summery {
+
+        }
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    // Version
+    &--Taps {
+
+        .Taps {
+
+            &__List {
+                padding: 0 1.6rem;
+            }
+        }
+    }
+
+
+    @include ScreenResponsive(Phone_Portrait) {
+
+        &__Pagination {
+            justify-content: center;
+
+            .Pagination--Numbers {
+                display: none;
+            }
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .Card {
+        background-color: $WhiteColor;
+        box-shadow: 0 0 $LightShadow;
+
+        .Card {
+            box-shadow : none ;
+        }
+
+        &__InnerGroup {
+            //border-bottom: 1px solid $SeparateBorderColor;
+
+            .Card__Inner:not(:last-child) {
+                border-bottom: 1px solid #dededf;
+            }
+        }
+
+        &__SearchTools {
+
+            &__Separate {
+                border-right: 1px solid $SeparateBorderColor_Extra-1 ;
+            }
+
+            .material-icons {
+                color : #444 ;
+
+                &:hover {
+                    background-color : #e1e1e1 ;
+                }
+            }
+        }
+
+        &__FilterIcon.Note ,
+        &__SearchIcon.Note {
+
+            &::after {
+                background-color: $TertiaryColor-Project;
+            }
+        }
+
+        & {
+
+            &__Title {
+                color : $BlackColor ;
+            }
+
+        }
+
+        &--Border {
+            border: 1px solid $SeparateBorderColor;
+        }
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .Card {
+        background-color: $BackGroundColor;
+
+        &__InnerGroup {
+            border-bottom: 1px solid $SeparateBorderColor;
+
+            .Card__Inner:not(:last-child) {
+                border-bottom: 1px solid $SeparateBorderColor;
+            }
+        }
+
+        &__SearchTools {
+
+            &__Separate {
+                border-right: 1px solid $SeparateBorderColor_Extra-1 ;
+            }
+        }
+
+        &__FilterIcon.Note ,
+        &__SearchIcon.Note {
+
+            &::after {
+                background-color: $TertiaryColor-Project;
+            }
+        }
+
+        & {
+
+            &__Title {
+                color : $WhiteColor ;
+            }
+
+        }
+
+        &--Border {
+            border: 1px solid $SeparateBorderColor;
+        }
+    }
+
+}

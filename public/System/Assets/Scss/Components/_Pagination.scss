@@ -1,0 +1,122 @@
+
+.Pagination {
+    position: relative;
+
+    &--Numbers {
+
+    }
+
+    &--Select {
+
+        .Pagination {
+
+            &__List {
+                gap: 1.5rem ;
+            }
+
+            &__PageWord ,
+            &__PageOf {
+                font-size: 1.4rem;
+            }
+
+        }
+
+        .Form {
+
+            &__Group {
+                width: fit-content ;
+
+                .Input__Area {
+                    border-color : #52565c;
+                }
+
+                .Input__Field {
+                    min-width: 7rem ;
+                    padding: 1.5rem 1rem ;
+                    text-align: center ;
+                }
+
+            }
+
+        }
+
+    }
+
+    &__List {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap ;
+        align-items: baseline;
+    }
+
+    &__Number a,
+    &__Previous a,
+    &__Next a ,
+    &__Points{
+        display: block ;
+        font-size: 1.2rem;
+        font-weight: 600 ;
+        padding: .5rem 1rem;
+        border: 1px solid $SeparateBorderColor;
+        color : $TextColor;
+    }
+
+    &__Number a.Current {
+        background-color: $PrimaryColor-Project;
+        color : $WhiteColor ;
+    }
+
+    &__Number a,
+    &__Previous a,
+    &__Next a {
+        cursor: pointer ;
+        transition: all .3s ;
+
+        &:hover {
+            background-color: $PrimaryColor-Project;
+            color : $WhiteColor ;
+        }
+    }
+
+    &__Previous {
+
+        a {
+            border-bottom-left-radius: $BorderRadiusValue;
+            border-top-left-radius: $BorderRadiusValue;
+        }
+    }
+
+    &__Next {
+
+        a {
+            border-bottom-right-radius: $BorderRadiusValue;
+            border-top-right-radius: $BorderRadiusValue;
+        }
+    }
+
+}
+
+@include Language(Arabic) {
+
+    .Pagination {
+
+        &__Previous {
+
+            a {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+                border-bottom-right-radius: $BorderRadiusValue;
+                border-top-right-radius: $BorderRadiusValue;
+            }
+        }
+
+        &__Next {
+
+            a {border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: $BorderRadiusValue;
+                border-top-left-radius: $BorderRadiusValue;
+            }
+        }
+    }
+}

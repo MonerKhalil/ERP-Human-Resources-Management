@@ -1,0 +1,23 @@
+
+.RollSettingPage {
+
+    .Card {
+
+        &--NewRoll {
+            position: sticky;
+            top: 6rem ;
+
+            .Col {
+
+                &--DragDropTarget {
+                    max-height: 30rem ;
+                    overflow-y : auto ;
+
+                    @include ScrollBar() ;
+                }
+            }
+        }
+    }
+}
+
+

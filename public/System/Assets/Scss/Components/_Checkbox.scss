@@ -1,0 +1,21 @@
+
+.CheckBoxNormal {
+    position: relative;
+    display: inline-block;
+    width : 2.5rem;
+    height : 2.5rem;
+    border: 1px solid $SeparateBorderColor_Extra-1 ;
+    border-radius: $BorderRadiusValue;
+    cursor: pointer;
+    transition: all .3s;
+
+    > .material-icons {
+        position: absolute ;
+        display: none ;
+        width: 100% ;
+        height: 100% ;
+        font-size: 2rem ;
+        left: 0.2rem ;
+        top: 0.1rem ;
+    }
+}

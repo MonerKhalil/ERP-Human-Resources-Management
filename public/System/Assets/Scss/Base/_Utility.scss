@@ -1,0 +1,293 @@
+
+.Container--Header {
+    width: 100%;
+    margin: 0 auto;
+
+    @include ScreenResponsive(Desktop) {
+        padding: 0 1.4rem ;
+    }
+
+    @include ScreenResponsive(Tablet) {
+        padding: 0 2.2rem ;
+    }
+
+    @include ScreenResponsive(Phone_Portrait) {
+        padding: 0 .4rem ;
+    }
+
+    @include ScreenResponsive(Desktop_Large) {
+        padding: 0 1.4rem ;
+    }
+
+    @include PrinterResponsive(Default) {
+        padding: 0 2.2rem ;
+    }
+}
+
+.Container--MainContent {
+    width: 100%;
+    margin: 0 auto;
+
+    @include ScreenResponsive(Desktop) {
+        padding: 0 3.4rem ;
+    }
+
+    @include ScreenResponsive(Tablet) {
+        padding: 0 4.2rem ;
+    }
+
+    @include ScreenResponsive(Phone_Portrait) {
+        padding: 0 2.4rem ;
+    }
+
+    @include ScreenResponsive(Desktop_Large) {
+        padding: 0 3.4rem ;
+    }
+
+    @include PrinterResponsive(Default) {
+        padding: 0 4.2rem ;
+    }
+}
+
+.IconClick {
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 0.6rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.UserImage {
+    position: relative;
+    width: 3rem ;
+    height: 3rem ;
+
+    > img {
+        width: 100% ;
+        height: 100% ;
+        border-radius: 50% ;
+    }
+}
+
+.Logo {
+
+    > a {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+    }
+
+    &__Image {
+        width:4rem ;
+        height: 4rem ;
+        border-radius: 50%;
+    }
+
+    &__SystemName {
+        color: $WhiteColor;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+.ArrowRight {
+    transform: rotate(180deg);
+}
+
+.Center {
+    text-align: center;
+}
+
+.Left {
+    text-align: left ;
+}
+
+.Right {
+    text-align: right;
+}
+
+.Justify-Content-End {
+    justify-content: end !important;
+}
+
+.Justify-Content-Center {
+    justify-content: center !important;
+}
+
+.Overflow-Hidden {
+    overflow: hidden;
+}
+
+.Visible-phonePortrait ,
+.Visible-phoneLandscape ,
+.Visible-tablet ,
+.Visible-desktop ,
+.Visible-desktopLarge {
+    display: none ;
+}
+
+.Hidden-phonePortrait ,
+.Hidden-phoneLandscape ,
+.Hidden-tablet ,
+.Hidden-desktop ,
+.Hidden-desktopLarge {
+    display: initial ;
+}
+
+.px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.py-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.pb-0 {
+    padding-bottom : 0 !important;
+}
+
+.pr-0 {
+    padding-right : 0 !important;
+}
+
+.pl-0 {
+    padding-left : 0 !important;
+}
+
+.my-1 {
+    margin-top : 1rem !important;
+    margin-bottom : 1rem !important;
+}
+
+.my-2 {
+    margin-top : 2rem !important;
+    margin-bottom : 2rem !important;
+}
+
+.my-3 {
+    margin-top : 3rem !important;
+    margin-bottom : 3rem !important;
+}
+
+.mx-1 {
+    margin-left : 1rem !important;
+    margin-right : 1rem !important;
+}
+
+.mx-2 {
+    margin-left : 2rem !important;
+    margin-right : 2rem !important;
+}
+
+.mx-3 {
+    margin-left : 3rem !important;
+    margin-right : 3rem !important;
+}
+
+@include ScreenResponsive(Desktop) {
+    .Visible-desktop {
+        display: initial !important;
+    }
+    .Hidden-desktop {
+        display : none !important;
+    }
+}
+
+@include ScreenResponsive(Tablet) {
+    .Visible-tablet {
+        display: initial !important;
+    }
+    .Hidden-tablet {
+        display : none !important;
+    }
+}
+
+@include ScreenResponsive(Phone_Landscape) {
+    .Visible-phoneLandscape {
+        display: initial !important;
+    }
+    .Hidden-phoneLandscape {
+        display : none !important;
+    }
+}
+
+@include ScreenResponsive(Phone_Portrait) {
+    .Visible-phonePortrait {
+        display: initial !important;
+    }
+    .Hidden-phonePortrait {
+        display : none !important;
+    }
+}
+
+@include ScreenResponsive(Desktop_Large) {
+    .Visible-desktopLarge {
+        display: initial !important;
+    }
+    .Hidden-desktopLarge {
+        display : none !important;
+    }
+}
+
+@include Language(Arabic) {
+
+    .Left {
+        text-align: right ;
+    }
+
+    .Right {
+        text-align: left ;
+    }
+}
+
+@include Themes(Light) {
+
+    .IconClick {
+        color : $DarkGrayColor ;
+
+        &:hover ,
+        &.Active {
+            background-color: rgba($BlackColor , .35);
+        }
+
+    }
+
+    .ReplaceNewBackGround {
+        background-color: #36794b;
+        color : $WhiteColor ;
+    }
+
+    .ReplaceOldBackGround {
+        background-color: #86191e ;
+        color : $WhiteColor ;
+    }
+}
+
+@include Themes(Dark) {
+
+    .IconClick {
+        color : $WhiteColor ;
+
+        &:hover ,
+        &.Active {
+            background-color: rgba($BlackColor , .35);
+        }
+
+    }
+
+    .ReplaceNewBackGround {
+        background-color: #1C4428;
+        color : $WhiteColor ;
+    }
+
+    .ReplaceOldBackGround {
+        background-color: #542426 ;
+        color : $WhiteColor ;
+    }
+}

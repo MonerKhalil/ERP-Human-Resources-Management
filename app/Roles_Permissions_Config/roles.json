@@ -1,0 +1,77 @@
+{
+    "roles" : {
+        "super_admin" : {
+            "users" : "a",
+            "roles" : "a",
+            "employees": "a",
+            "session_decisions": "a",
+            "type_decisions": "a",
+            "decisions": "a",
+            "sections": "a",
+            "conferences": "a",
+            "positions": "a",
+            "position_employees": "a",
+            "data_end_services": "a",
+            "request_end_services": "a",
+            "leave_types": "a",
+            "leaves": "a",
+            "contracts": "a",
+            "correspondences": "a",
+            "correspondence_source_dests": "a",
+            "languages": "a",
+            "language_skills": "a",
+            "membership_types": "a",
+            "memberships": "a",
+            "company_settings": "a",
+            "work_settings": "a",
+            "public_holidays": "a",
+            "overtime_types": "a",
+            "overtimes": "a",
+            "section_externals": "a",
+            "employee_evaluations": "a",
+            "attendances" : "a",
+            "payrolls" : "a"
+        },
+        "employee" : {
+        },
+        "hr_manager": {
+            "employees": "a",
+            "data_end_services": "a",
+            "conferences": "a",
+            "request_end_services": "a",
+            "session_decisions": "a",
+            "type_decisions": "a",
+            "decisions": "a",
+            "leaves" : "a",
+            "leave_types": "a",
+            "overtime_types": "a",
+            "overtimes": "a",
+            "attendances" : "a",
+            "work_settings": "a",
+            "contracts": "a",
+            "payrolls" : "a"
+        },
+        "diwan_manager": {
+            "employees": "r",
+            "correspondences": "a",
+            "correspondence_source_dests": "a",
+            "sections": "r",
+            "section_externals": "r"
+        },
+        "legal_manager": {
+            "employees": "r",
+            "correspondences": "a",
+            "correspondence_source_dests": "a",
+            "sections": "r",
+            "section_externals": "r"
+        }
+    },
+    "process": {
+        "a" : "all",
+        "r" : "read",
+        "c" : "create",
+        "u" : "update",
+        "d" : "delete",
+        "e" : "export"
+    }
+}

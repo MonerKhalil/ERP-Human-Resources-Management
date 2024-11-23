@@ -1,0 +1,88 @@
+
+.AttendanceClock {
+    position: relative;
+
+    &__TypeTime {
+        margin-bottom: 4rem;
+
+        .TypeTime {
+            width: fit-content;
+            margin: 0 auto;
+            background-color: #1A202E;
+            padding: 0.5rem;
+            border-radius: 5px;
+
+            .Taps__Item {
+                display: inline-block;
+                padding: 0.5rem 3rem;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &::after {
+                    background-color: transparent !important;
+                }
+
+                &.Active {
+                    background: #3F51B5;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &__DateTime {
+        margin-bottom: 4rem;
+
+        .CircleTime {
+            position: relative;
+            background: #1689F1;
+            border-radius: 50%;
+            width: 30rem;
+            height: 30rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 2rem;
+            color : #fff ;
+            letter-spacing: 2px;
+            border: 5px solid #AAEAF2;
+
+            .Time {
+                font-weight: 600;
+            }
+
+            .Day {
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                font-size: 4rem;
+            }
+
+            .Date {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__Register {
+        text-align: center;
+
+        .BoxRegister {
+            text-align: center;
+            max-width: 40rem;
+            background: #23364e;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 5px;
+            border: 1px solid #AAEAF2;
+            border-bottom: 5px solid #fff;
+            color: #fff;
+            line-height: 2;
+            font-size: 1.8rem;
+        }
+    }
+
+}

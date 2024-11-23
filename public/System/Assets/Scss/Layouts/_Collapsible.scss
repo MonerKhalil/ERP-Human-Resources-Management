@@ -1,0 +1,27 @@
+
+.CollapsibleMenu {
+
+    &__CollapseItem {
+
+        > * {
+            padding: 1rem 2rem;
+        }
+
+        .CollapseItem {
+
+            &__Header {
+                display: flex;
+                justify-content: space-between;
+
+            }
+
+            &__Text {
+                flex : 1 ;
+            }
+
+            &__Body {
+
+            }
+        }
+    }
+}

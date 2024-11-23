@@ -1,0 +1,53 @@
+
+.Loader {
+    position: fixed;
+    top : 0 ;
+    left : 0 ;
+    width: 100% ;
+    height: 100vh;
+    z-index: $VeryTopLayer;
+
+    &--Upload {
+        display: none;
+    }
+
+    &__SvgCircle {
+        @include BoxCenter ;
+        display: inline-block;
+        width: 10rem;
+        height: 10rem;
+    }
+
+}
+
+@include Themes(Light) {
+
+    .Loader {
+
+        &--Page {
+            background-color: #757575;
+        }
+
+        &--Upload {
+            background-color: rgb(0,0,0,.76);
+        }
+
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .Loader {
+
+        &--Page {
+            background-color: $BackGroundColor;
+        }
+
+        &--Upload {
+            background-color: $BackGroundColor_Extra-2;
+        }
+
+    }
+
+}

@@ -1,0 +1,32 @@
+
+.DragDrop {
+
+    &__Item {
+
+        .IsDragging {
+
+        }
+    }
+
+    &__Zone {
+
+        &.Empty {
+            position: relative;
+            width: 100% ;
+            height: 20rem ;
+            border : 1px solid $SeparateBorderColor;
+            border-radius: $BorderRadiusValue;
+
+            .DragDrop__Tip {
+                display: block;
+            }
+        }
+    }
+
+    &__Tip {
+        display: none ;
+        @include BoxCenter() ;
+        opacity: .6;
+        font-size: 3rem;
+    }
+}

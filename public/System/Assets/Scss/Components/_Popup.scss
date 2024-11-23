@@ -1,0 +1,185 @@
+
+.Popup {
+    position: fixed;
+    top : 0 ;
+    left : 0 ;
+    width: 100% ;
+    height: 100vh ;
+    visibility: hidden;
+    opacity: 0;
+    z-index: $TopLayer;
+    transition: all .4s;
+
+    &__Title {
+        position: relative;
+        text-align: center;
+
+        .Title {
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top : 50% ;
+            left: 0 ;
+            width: 100% ;
+            height: 1px;
+            transform: translateY(-50%);
+            background-color: $SeparateBorderColor_Extra-1;
+        }
+    }
+
+    &__Content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100% ;
+        height: 100vh ;
+        padding: 0 2rem;
+    }
+
+    &__InnerGroup {
+
+    }
+
+    &__Inner {
+        padding: 2.4rem ;
+
+        &:not(:first-child) {
+            padding-top: 0 ;
+        }
+    }
+
+    &__Card {
+        position: relative;
+        max-width: 70rem;
+        width: 100%;
+        padding: 3rem;
+        border-radius: $BorderRadiusValue;
+    }
+
+    &__CardContent {
+        max-height: calc(100vh - 20rem);
+        overflow-y: auto;
+
+        @include ScrollBar();
+    }
+
+    &__Close {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        background-color: $PrimaryColor-Project;
+        color : $WhiteColor ;
+        padding: 1rem;
+        border-radius: 50%;
+        transition: all 0.4s;
+    }
+
+    &.Open {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@include Themes(Light) {
+
+    .Popup {
+        background-color: $BackGroundColor_Extra-2 ;
+
+        &__Title {
+
+            .Title {
+                background-color: $WhiteColor;
+            }
+        }
+
+        &__Card {
+            background-color: $WhiteColor;
+            box-shadow: 0 0 $DarkShadow;
+        }
+
+        &__Close {
+
+            &:hover {
+                background-color: darken($PrimaryColor-Project , 20%);
+            }
+        }
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .Popup {
+        background-color: $BackGroundColor_Extra-2 ;
+
+        &__Title {
+
+            .Title {
+                background-color: $BackGroundColor_Extra-4;
+            }
+        }
+
+        &__Card {
+            background-color: $BackGroundColor_Extra-4;
+            box-shadow: 0 0 $DarkShadow;
+
+            .Form {
+
+                &__Input {
+
+                    .Input {
+
+                        &__Field {
+
+                            &:focus ~ .Input__Label ,
+                            &:not(:placeholder-shown) ~ .Input__Label {
+                                background-color: $BackGroundColor_Extra-4;
+                            }
+                        }
+                    }
+                }
+
+                &__Date {
+
+                    .Date {
+
+                        &__Field {
+
+                            &:not(:placeholder-shown) ~ .Date__Label {
+                                background-color: $BackGroundColor_Extra-4;
+                            }
+                        }
+                    }
+                }
+
+                &__Select {
+
+                    .Selector {
+
+                        &__WordLabel {
+                            background-color: $BackGroundColor_Extra-4;
+                        }
+
+                        &__Options {
+                            background-color: $BackGroundColor_Extra-4;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__Close {
+
+            &:hover {
+                background-color: darken($PrimaryColor-Project , 20%);
+            }
+        }
+    }
+
+}

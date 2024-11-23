@@ -1,0 +1,146 @@
+
+.AuthenticationPage {
+    position: relative;
+
+    &__Content {
+        position: relative;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &__Logo {
+        position: absolute;
+        left: 50%;
+        top: 1rem;
+        transform: translateX(-50%);
+
+        .Logo {
+
+            &__Image {
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+    }
+
+    &__ImagePage {
+        width: 50% ;
+
+        > img {
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__LoginForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50% ;
+        padding: 0 2rem;
+
+        .Content {
+            max-width: 100%;
+            width: 50rem ;
+            padding: 4rem;
+            margin: auto 0;
+            border-radius: $BorderRadiusValue;
+        }
+    }
+
+    &__Title {
+        text-transform: capitalize;
+    }
+
+    &__Text {
+        margin-bottom: 2.5rem ;
+
+        .LoginPage__Title {
+            margin-bottom: .5rem ;
+        }
+    }
+
+    &__Form {
+
+        .Form {
+
+            &__Button {
+
+                .Button {
+                    width: 100% ;
+                }
+            }
+        }
+    }
+
+    @include ScreenResponsive(Tablet) {
+
+        &__Content {
+            height: auto ;
+            min-height: 100vh;
+            overflow: initial;
+        }
+
+        &__Logo {
+            top : 0 ;
+            left : 50% ;
+            transform: translate(-50% , -50%);
+
+            .Logo {
+
+                > a {
+                    justify-content: center;
+                }
+            }
+
+        }
+
+        &__ImagePage {
+            display: none;
+        }
+
+        &__LoginForm {
+            width: 100% ;
+
+            .Content {
+                position: relative;
+                width: 55rem;
+                border: 1px solid #96A2B4;
+                border-radius: $BorderRadiusValue;
+                padding: 6rem 3rem 3rem ;
+            }
+        }
+
+    }
+}
+
+@include Themes(Light) {
+
+    .AuthenticationPage {
+
+        &__LoginForm {
+
+            .Content {
+                background: #fff;
+                box-shadow: 0 2px 16px #5c5b5b5e;
+            }
+        }
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .AuthenticationPage {
+
+        &__LoginForm {
+            background-color: #1B202D;
+        }
+
+        &__Title {
+            color: #96A2B4;
+        }
+    }
+
+}

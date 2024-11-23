@@ -1,0 +1,203 @@
+
+.Selector {
+    position: relative;
+    width : 100% ;
+    font-size: 1.5rem ;
+
+    &__Main {
+        position: relative;
+        display: block ;
+        width: 100%;
+        padding: 1.1rem 2rem;
+        outline: 1px solid $SeparateBorderColor_Extra-1;
+        border-radius: $BorderRadiusValue ;
+        cursor: pointer;
+        transition: all .3s;
+    }
+
+    &__WordLabel {
+        font-weight: 700;
+        transition: all .3s;
+    }
+
+    &__WordChoose {
+        display: none;
+        font-size: 1.5rem;
+        color : #0e0e0e ;
+    }
+
+    &__Options {
+        position: absolute;
+        top : 0 ;
+        left : 0 ;
+        width: 100% ;
+        max-height: 0;
+        border-radius: $BorderRadiusValue ;
+        background-color: #000 ;
+        visibility: hidden;
+        opacity: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-shadow: 0 0 $DarkShadow;
+        transition: all .3s ;
+
+        @include ScrollBar() ;
+    }
+
+    &__Option {
+        padding: 1rem 2rem;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background-color: #1EE0AC;
+        }
+    }
+
+    &__Arrow {
+        position: absolute;
+        top : 50% ;
+        right : 1rem ;
+        transform: translateY(-50%);
+    }
+
+    &.Open {
+
+        .Selector {
+
+            &__Main {
+                z-index: $LowLayer;
+            }
+
+            &__Options {
+                top : calc(100% + .5rem) ;
+                visibility: visible;
+                opacity: 1;
+                max-height: 21rem;
+                z-index: $VeryLowLayer;
+            }
+        }
+    }
+
+    &.Selected {
+
+        .Selector {
+
+            &__WordLabel {
+                position: absolute ;
+                top : 0 ;
+                left : 1.5rem ;
+                transform: translateY(-50%);
+                font-size: 1.3rem;
+                padding: 0 0.5rem;
+            }
+
+            &__WordChoose {
+                display: initial;
+            }
+        }
+    }
+
+    // Sizing
+    &.Size-2 {
+        font-size: 1.3rem ;
+
+        .Selector {
+
+            &__Main {
+                min-width: 12rem;
+                padding: 0.5rem 3rem 0.5rem 1rem ;
+            }
+
+            &__WordLabel {
+                font-size: 1rem;
+                left: 0.5rem;
+            }
+
+            &__WordChoose {
+                font-size: inherit;
+            }
+        }
+    }
+}
+
+@include Language(Arabic) {
+
+    .Selector {
+
+        &__Arrow {
+            right : initial ;
+            left : 1rem ;
+        }
+
+        &.Selected {
+
+            .Selector {
+
+                &__WordLabel {
+                    left : initial ;
+                    right : 1.5rem ;
+                }
+            }
+        }
+
+        &.Size-2 {
+
+            .Selector {
+
+                &__Main {
+                    padding: 0.5rem 1rem 0.5rem 3rem ;
+                }
+
+                &__WordLabel {
+                    left: initial;
+                    right: .5rem;
+                }
+            }
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .Selector {
+
+        &.Selected {
+
+            .Selector {
+
+                &__WordChoose {
+                    color : #0e0e0e ;
+                }
+
+                &__WordLabel {
+                    background : linear-gradient(to bottom, #fff 44%, #F5F5F5 50%) ;
+                }
+
+            }
+
+        }
+    }
+}
+
+@include Themes(Dark) {
+
+    .Selector {
+
+        &.Selected {
+
+            .Selector {
+
+                &__WordChoose {
+                    color : $TextColor ;
+                }
+
+                &__WordLabel {
+                    background : $BackGroundColor ;
+                }
+
+            }
+
+        }
+    }
+}

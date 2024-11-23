@@ -1,0 +1,54 @@
+
+.NotificationPage {
+    position: relative ;
+
+    &__Buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap : 1rem ;
+    }
+
+    &__NotificationList {
+
+        .Notification {
+
+            &:not(:last-child)::after {
+                @include UnderLine() ;
+            }
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .NotificationPage {
+
+        &__NotificationList {
+
+            .Notification {
+
+                &:not(:last-child)::after {
+                    background-color: #dededf;
+                }
+            }
+        }
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .NotificationPage {
+
+        &__NotificationList {
+
+            .Notification {
+
+                &:not(:last-child)::after {
+                    background-color: $SeparateBorderColor_Extra-3;
+                }
+            }
+        }
+    }
+}

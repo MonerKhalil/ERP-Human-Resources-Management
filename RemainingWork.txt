@@ -1,0 +1,15 @@
+ViewUser : {
+    View Users Need Bulk For Print Just Checked
+}
+
+ViewRole : {
+    View Roles Need Bulk For Print & Delete Just Checked
+    Error Back Search By Start & End Date
+}
+
++ When Submit Form And Any Field is Not Valid the error created in fail location
+
+{
+    ربط التقييم مع الـ back-end
+    ربط الـ notification update مع الـ ajax من الباك
+}

@@ -1,0 +1,201 @@
+
+.ListData {
+    position: relative;
+
+    &__Head {
+        padding: .5rem 1rem;
+        border-radius: $BorderRadiusValue;
+    }
+
+    &__Title {
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    &__Group {
+
+    }
+
+    &__GroupTitle {
+        padding : 2.5rem 1rem .5rem 1rem ;
+
+        .Title {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+
+    &__Content {
+
+    }
+
+    &__Item {
+
+        .Data_Col {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 1rem;
+            transition: all .3s;
+
+            .Data_Label {
+                width: 50%;
+            }
+
+            .Data_Value {
+                width: 50%;
+                text-align: left;
+                word-break: break-word;
+            }
+
+            &--End {
+                justify-content: flex-end;
+                flex-grow: 0;
+                min-width: 10rem;
+            }
+        }
+
+        &--Action ,
+        &--NoAction {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &--Action {
+            cursor: pointer;
+        }
+    }
+
+    &__CustomItem {
+        padding: 2.5rem 1rem;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
+    @include ScreenResponsive(Phone_Landscape) {
+
+        &:not(.NotResponsive) {
+
+            .ListData {
+
+                &__Item {
+
+                    .Data_Col {
+                        flex-direction: column;
+
+                        .Data_Label {
+                            width: 100%;
+                        }
+
+                        .Data_Value {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@include Language(Arabic) {
+
+    .ListData {
+
+        &__Item {
+
+            .Data_Col {
+
+                .Data_Value {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .ListData {
+
+        &__Head {
+            background-color: #ebeef2;
+        }
+
+        &__Title {
+            color: #8094ae;
+        }
+
+        &__GroupTitle {
+
+            .Title {
+                color: #801717;
+            }
+        }
+
+        &__Item {
+
+            &--Action ,
+            &--NoAction {
+                color : $DarkGrayColor;
+            }
+
+            &:hover {
+
+                .Data_Col {
+                    color: $BlackColor;
+                }
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $SeparateBorderColor;
+            }
+        }
+    }
+}
+
+@include Themes(Dark) {
+
+    .ListData {
+
+        &__Head {
+            background-color: #212a3f;
+        }
+
+        &__Title {
+            color: $TextColor;
+        }
+
+        &__GroupTitle {
+
+            .Title {
+                color: #e9e9e9;
+            }
+        }
+
+        &__Item {
+
+            &--Action ,
+            &--NoAction {
+                color : $GrayColor;
+            }
+
+            &:hover {
+
+                .Data_Col {
+                    color: $WhiteColor;
+                }
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $SeparateBorderColor;
+            }
+        }
+
+    }
+
+}

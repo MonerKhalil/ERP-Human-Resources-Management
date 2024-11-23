@@ -1,0 +1,44 @@
+@import "../../Lib/trumbowyg/dist/ui/sass/trumbowyg";
+
+.trumbowyg-box {
+    z-index: $BasicLayer;
+    border-radius: $BorderRadiusValue;
+    //overflow: hidden;
+
+    .trumbowyg-editor {
+        min-height: 26.1rem ;
+    }
+}
+
+
+.trumbowyg-dark {
+
+    .trumbowyg-box {
+        border: 1px solid $SeparateBorderColor_Extra-1;
+
+        svg {
+            fill: $TextColor;
+            color: $TextColor;
+        }
+    }
+
+    .trumbowyg-button-pane {
+        background-color: $BackGroundColor;
+        border-bottom-color: $SeparateBorderColor_Extra-1;
+
+        button:not(.trumbowyg-disable):hover,
+        button:not(.trumbowyg-disable):focus,
+        button.trumbowyg-active {
+            background-color: #111620;
+        }
+    }
+
+    .trumbowyg-dropdown {
+        border-color: $BackGroundColor;
+        background: $BackGroundColor;
+
+        button {
+            background: $BackGroundColor;
+        }
+    }
+}

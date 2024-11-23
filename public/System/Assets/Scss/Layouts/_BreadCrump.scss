@@ -1,0 +1,98 @@
+
+.Breadcrumb {
+    position: relative;
+    width: 100% ;
+
+    &__Header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 1rem ;
+    }
+
+    &__Title {
+        text-transform: capitalize;
+    }
+
+    &__Path {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 1.4rem;
+    }
+
+    &__Summery {
+
+        .Summery {
+            font-size: 1.4rem;
+        }
+    }
+
+    @include ScreenResponsive(Phone_Portrait) {
+
+        &__Header {
+            flex-direction: column-reverse;
+            row-gap: 1rem;
+            align-items: flex-start;
+        }
+    }
+
+}
+
+@include Themes(Light) {
+
+    .Breadcrumb {
+
+        &__Title {
+            color: $SecondaryColor-Project-Light;
+        }
+
+        &__Path {
+
+            color : $TextColor-Light ;
+
+            a {
+                color : $TextColor-Light ;
+            }
+
+        }
+
+        &__Summery {
+
+            .Summery {
+                color: $TextColor-Light;
+            }
+        }
+
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .Breadcrumb {
+
+        &__Title {
+            color: $SecondaryColor-Project;
+        }
+
+        &__Path {
+
+            color : $TextColor ;
+
+            a {
+                color : $TextColor ;
+            }
+
+        }
+
+        &__Summery {
+
+            .Summery {
+                color: $TextColor;
+            }
+        }
+
+    }
+
+}

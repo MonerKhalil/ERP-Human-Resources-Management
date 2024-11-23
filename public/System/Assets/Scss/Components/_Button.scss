@@ -1,0 +1,44 @@
+
+.Button {
+
+    & ,
+    &:link ,
+    &:visited {
+        position: relative ;
+        display: inline-block ;
+        border-radius: $BorderRadiusValue ;
+        border: none ;
+        font-size: 1.6rem ;
+        padding: 1rem 2rem ;
+        line-height: inherit ;
+        outline: none ;
+        cursor: pointer ;
+        transition: all .3s ;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0 $DarkShadow ;
+    }
+
+    &:active ,
+    &:focus {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0 $LightShadow;
+    }
+
+    &--Primary {
+        background-color: $PrimaryColor-Project;
+        color : $WhiteColor
+    }
+
+    &--Danger {
+        background-color: $DangerColor;
+        color : $WhiteColor
+    }
+
+    &.Size-2 {
+        padding: 0.6rem 2rem ;
+    }
+
+}

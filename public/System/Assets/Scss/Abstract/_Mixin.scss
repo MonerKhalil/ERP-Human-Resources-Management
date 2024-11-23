@@ -1,0 +1,137 @@
+
+/*-----------------------------
+  Responsive Project
+-----------------------------*/
+@mixin ScreenResponsive($BreakPoint) {
+    @if($BreakPoint == Phone_Portrait) { // 575.85
+        @media only screen and (max-width: 35.99em) { @content }
+    } @else if($BreakPoint == Phone_Landscape) { // 767.84
+        @media only screen and (max-width: 47.99em) { @content }
+    } @else if($BreakPoint == Tablet) { // 991.84
+        @media only screen and (max-width: 61.99em) { @content }
+    }@else if($BreakPoint == Desktop) { // 1199.84
+        @media only screen and (max-width: 74.99em) { @content }
+    }@else if($BreakPoint == Desktop_Large) { // 1200
+        @media only screen and (min-width: 75em) { @content }
+    }
+}
+
+@mixin ScreenResponsive_V2($BreakPoint) {
+    @if($BreakPoint == Phone_Portrait) { // 0
+        @media only screen and (min-width: 0em) { @content }
+    } @else if($BreakPoint == Phone_Landscape) { // 576
+        @media only screen and (min-width: 36em) { @content }
+    } @else if($BreakPoint == Tablet) { // 768
+        @media only screen and (min-width: 48em) { @content }
+    }@else if($BreakPoint == Desktop) { // 992
+        @media only screen and (min-width: 62em) { @content }
+    }@else if($BreakPoint == Desktop_Large) { // 1200
+        @media only screen and (min-width: 75em) { @content }
+    }
+}
+
+@mixin PrinterResponsive($PaperSize) {
+
+    @if($PaperSize == A0) {
+        @media print and (width: 84.1cm) and (height: 118.9cm) {
+            @content
+        }
+    } @else if($PaperSize == A1) {
+        @media print and (width: 59.4cm) and (height: 84.1cm) {
+            @content
+        }
+    } @else if($PaperSize == A2) {
+        @media print and (width: 42cm) and (height: 59.4cm) {
+            @content
+        }
+    } @else if($PaperSize == A3) {
+        @media print and (width: 29.7cm) and (height: 42cm) {
+            @content
+        }
+    } @else if($PaperSize == A4) {
+        @media print and (width: 21cm) and (height: 29.7cm) {
+            @content
+        }
+    } @else if($PaperSize == A5) {
+        @media print and (width: 14.85cm) and (height: 21cm) {
+            @content
+        }
+    } @else {
+        @media print {
+            @content
+        }
+    }
+}
+
+/*-----------------------------
+  Language Project
+-----------------------------*/
+@mixin Language($Lang) {
+    @if($Lang == Arabic) {
+        html[lang="ar"] {
+            @content ;
+        }
+    } @else if($Lang == English) {
+        html[lang="en"] {
+            @content ;
+        }
+    }
+}
+
+/*-----------------------------
+  Themes Project
+-----------------------------*/
+@mixin Themes($Type) {
+    body {
+        @if($Type == Dark) {
+            &.Dark {
+                @content
+            }
+        } @else if($Type == Light) {
+            &.Light {
+                @content
+            }
+        }
+    }
+}
+
+/*-----------------------------
+  Re-use Part
+-----------------------------*/
+@mixin BoxCenter() {
+    position: absolute;
+    left : 50% ;
+    top : 50% ;
+    transform: translate(-50% , -50%);
+}
+
+@mixin ScrollBar() {
+    &::-webkit-scrollbar {
+        width: .4rem;
+    }
+    &::-webkit-scrollbar-track ,
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 10px;
+        transition: all .3s;
+    }
+    &:hover {
+        &::-webkit-scrollbar-track {
+            background-color: #181818de;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #ffffff45;
+        }
+    }
+}
+
+@mixin UnderLine() {
+    content: "" ;
+    position: absolute;
+    bottom: 0 ;
+    left : 0 ;
+    width: 100% ;
+    height: 2px ;
+    border-radius: $BorderRadiusValue;
+    background-color: #000 ;
+}

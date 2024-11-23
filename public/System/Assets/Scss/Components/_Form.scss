@@ -1,0 +1,892 @@
+
+.Form {
+
+    // Version With Animated Label
+    position: relative;
+
+    &__Group {
+        position: relative ;
+        width : 100% ;
+    }
+
+    &__Input ,
+    &__Date ,
+    &__Search ,
+    &__UploadFile ,
+    &__Textarea ,
+    &__FieldReadOnly {
+        position: relative;
+        width: 100%;
+
+        .Date ,
+        .Input ,
+        .Search ,
+        .UploadFile ,
+        .Textarea ,
+        .FieldReadOnly {
+
+            &__Area {
+                position: relative;
+                border-radius: $BorderRadiusValue ;
+
+                &.Error {
+                    border-color: $DangerColor;
+
+                    .Input__Label {
+                        color : $DangerColor ;
+                    }
+                }
+            }
+
+            &__Field {
+                display: block ;
+                width : 100% ;
+                font-family: inherit ;
+                font-size: 1.5rem ;
+                outline: none;
+                border: none ;
+                padding: 1.3rem 2rem;
+                border-radius: $BorderRadiusValue - 1px ;
+                transition: all .4s;
+            }
+
+            &__Label {
+                position: absolute ;
+                top : 1rem ;
+                left : 2rem ;
+                font-size: 1.5rem ;
+                font-weight: 700;
+                transition: all .3s;
+            }
+        }
+    }
+
+    &__Input {
+
+        .Input {
+
+            &__Field {
+
+                &:-internal-autofill-selected {
+                    background-color: transparent !important;
+                }
+
+                /* Chrome, Safari, Edge, Opera */
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                /* Firefox */
+                &[type=number] {
+                    -moz-appearance: textfield;
+                }
+
+                &:focus ~ .Input__Label ,
+                &:not(:placeholder-shown) ~ .Input__Label {
+                    top: 0;
+                    left: 1.5rem;
+                    transform: translateY(-50%);
+                    font-size: 1.3rem;
+                    padding: 0 0.5rem;
+                }
+            }
+        }
+
+        &--Password {
+
+            .Input {
+
+                &__Field {
+                    //padding: 1.5rem 4rem 1.5rem 2rem;
+                    padding: 1.3rem 4rem 1.3rem 2rem;
+                }
+
+                &__Icon {
+                    position: absolute;
+                    right: 1rem ;
+                    top : 50% ;
+                    cursor: pointer;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    &__Date {
+
+        .Date {
+
+            &__Field {
+
+                &:not(:placeholder-shown) ~ .Date__Label {
+                    top: 0;
+                    left: 1.5rem;
+                    transform: translateY(-50%);
+                    font-size: 1.3rem;
+                    padding: 0 0.5rem;
+                }
+            }
+        }
+    }
+
+    &__CheckBox {
+        position: relative;
+
+        .CheckBox {
+
+            &__Area {
+
+            }
+
+            &__Input {
+                display: none;
+
+                &:checked {
+
+                    ~ .CheckBox__Label .IconChecked {
+
+                        > .material-icons {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+
+            &__Label {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+
+                .IconChecked {
+                    @extend .CheckBoxNormal
+                }
+
+                .TextCheckBox {
+                    font-size: 1.6rem;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+
+    &__Radio {
+
+    }
+
+    &__UploadFile {
+
+        .FileUpload {
+
+            &__Label {
+                position: absolute ;
+                top : 1rem ;
+                left : 2rem ;
+                font-size: 1.5rem ;
+                font-weight: 700;
+                transition: all .3s;
+            }
+
+            &__FileName {
+                display: block;
+                width: 100%;
+                font-family: inherit;
+                font-size: 1.5rem;
+                outline: none;
+                border: none;
+                padding: 1.05rem 2rem;
+                border-radius: 4px;
+                visibility: hidden;
+                opacity: 0 ;
+                word-break: break-all ;
+                transition: all 0.4s;
+            }
+
+            &.Selected {
+
+                .FileUpload {
+
+                    &__Label {
+                        top: 0;
+                        left: 1.5rem;
+                        transform: translateY(-50%);
+                        font-size: 1.3rem;
+                        padding: 0 0.5rem;
+                    }
+
+                    &__FileName {
+                       visibility: visible ;
+                        opacity: 1 ;
+                    }
+                }
+            }
+        }
+    }
+
+    &__TextEditor {
+
+        .TextEditor {
+
+            &__Area {
+
+            }
+
+            &__Label {
+                display: inline-block ;
+                margin-bottom: 1rem ;
+            }
+
+            &__Field {
+
+            }
+        }
+
+    }
+
+    &__Textarea {
+
+        .Textarea {
+
+            &__Field {
+
+                &:focus ~ .Textarea__Label ,
+                &:not(:placeholder-shown) ~ .Textarea__Label {
+                    top: 0;
+                    left: 1.5rem;
+                    transform: translateY(-50%);
+                    font-size: 1.3rem;
+                    padding: 0 0.5rem;
+                    width: fit-content;
+                }
+            }
+        }
+    }
+
+    &__Link {
+
+        .Link {
+
+            &__Anchor {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__Error {
+
+        .Error {
+
+            &__Area {
+                list-style: initial;
+                color: $DangerColor;
+            }
+        }
+    }
+
+    &__FieldReadOnly {
+
+        .FieldReadOnly {
+
+            &__Label {
+                top: 0;
+                left: 1.5rem;
+                transform: translateY(-50%);
+                font-size: 1.3rem;
+                padding: 0 0.5rem;
+            }
+
+            &__Value {
+                position: absolute ;
+                top : 1rem ;
+                left : 2rem ;
+                font-size: 1.5rem ;
+            }
+
+            &__Close {
+                position: absolute;
+                top: 50%;
+                right: 1rem;
+                transform: translateY(-50%);
+                cursor: pointer;
+                transition: color .3s;
+            }
+        }
+    }
+
+    &__Tips {
+        font-weight: 400;
+    }
+
+}
+
+@include Language(Arabic) {
+
+    .Form {
+
+        &__Input ,
+        &__Date ,
+        &__UploadFile ,
+        &__Textarea ,
+        &__FieldReadOnly {
+
+            .Input ,
+            .Date ,
+            .UploadFile ,
+            .Textarea ,
+            .FieldReadOnly{
+
+                &__Label {
+                    left : initial ;
+                    right: 2rem ;
+                }
+            }
+        }
+
+        &__Input {
+
+            .Input {
+
+                &__Field {
+
+                    &:focus ~ .Input__Label ,
+                    &:not(:placeholder-shown) ~ .Input__Label {
+                        top: 0;
+                        left: initial;
+                        right: 1.5rem;
+                    }
+                }
+            }
+
+            &--Password {
+
+                .Input {
+
+                    &__Field {
+                        //padding: 1.5rem 2rem 1.5rem 4rem;
+                        padding: 1.3rem 2rem 1.3rem 4rem;
+                    }
+
+                    &__Icon {
+                        right: initial ;
+                        left: 1rem;
+                    }
+                }
+            }
+        }
+
+        &__Date {
+
+            .Date {
+
+                &__Field {
+                    &:not(:placeholder-shown) ~ .Date__Label {
+                        left: initial;
+                        right : 1.5rem
+                    }
+                }
+            }
+        }
+
+        &__UploadFile {
+
+            .FileUpload {
+
+                &__Label {
+                    left : initial ;
+                    right : 2rem ;
+                }
+
+                &.Selected {
+
+                    .FileUpload {
+
+                        &__Label {
+                            left: initial ;
+                            right: 1.5rem ;
+                        }
+
+                        &__FileName {
+                            visibility: visible ;
+                            opacity: 1 ;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__FieldReadOnly {
+
+            .FieldReadOnly {
+
+                &__Value {
+                    left : initial ;
+                    right: 2rem ;
+                }
+
+                &__Close {
+                    right : initial;
+                    left : 1rem;
+                }
+            }
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .Form {
+
+        &__Input ,
+        &__Date ,
+        &__Search ,
+        &__UploadFile ,
+        &__Textarea ,
+        &__FieldReadOnly {
+
+            .Date ,
+            .Input ,
+            .Search ,
+            .UploadFile ,
+            .Textarea ,
+            .FieldReadOnly {
+
+                &__Area {
+                    border : 1px solid $SeparateBorderColor_Extra-1 ;
+                    border-radius: $BorderRadiusValue ;
+
+                    &.Error {
+                        border-color: $DangerColor;
+
+                        .Input__Label {
+                            color : $DangerColor ;
+                        }
+                    }
+                }
+
+                &__Field {
+                    color : #0e0e0e ;
+                    background-color: #F5F5F5;
+
+                    &::placeholder {
+                        color : transparent;
+                    }
+                }
+            }
+        }
+
+        &__Input {
+
+            .Input {
+
+                &__Field {
+
+                    &:-internal-autofill-selected {
+                        background-color: transparent !important;
+                    }
+
+                    &:focus ~ .Input__Label ,
+                    &:not(:placeholder-shown) ~ .Input__Label {
+                        background : linear-gradient(to bottom, #fff 44%, #F5F5F5 50%) ;
+                    }
+
+                }
+
+            }
+        }
+
+        &__Date {
+
+            .Date {
+
+                &__Field {
+
+                    &:not(:placeholder-shown) ~ .Date__Label {
+                        background : linear-gradient(to bottom, #fff 44%, #F5F5F5 50%) ;
+                    }
+                }
+            }
+        }
+
+        &__Textarea {
+
+            .Textarea {
+
+                &__Field {
+
+                    &:focus ~ .Textarea__Label ,
+                    &:not(:placeholder-shown) ~ .Textarea__Label {
+                        background: linear-gradient(to bottom, #fff 44%, #F5F5F5 50%) ;
+                    }
+                }
+            }
+        }
+
+        &__CheckBox {
+
+            .CheckBox {
+
+                &__Input {
+
+                    &:checked {
+
+                        ~ .CheckBox__Label .IconChecked {
+                            background-color: $PrimaryColor-Project;
+                            border-color: $PrimaryColor-Project;
+                        }
+                    }
+                }
+
+                &__Label {
+
+                    .IconChecked {
+                        color : $WhiteColor ;
+                    }
+                }
+
+            }
+        }
+
+        &__Select {
+
+            .Selector ,
+            .MultiSelector {
+
+                &__Main {
+                    background-color: #F5F5F5 ;
+                }
+
+                &__WordLabel {
+                    background-color: #F5F5F5;
+                }
+
+                &__Options {
+                    background-color: #F5F5F5;
+                    border : 1px solid $SeparateBorderColor_Extra-1;
+                }
+
+                &__Option {
+
+                    &:hover {
+                        background-color: $PrimaryColor-Project ;
+                        color : $WhiteColor ;
+                    }
+                }
+            }
+        }
+
+        &__Search {
+
+            .Search {
+
+                &__Field {
+
+                    &::placeholder {
+                        color : inherit;
+                    }
+                }
+            }
+        }
+
+        &__Link {
+
+            .Link {
+
+                &__Anchor {
+                    color: $TextColor;
+
+                    &:hover {
+                        color : $TertiaryColor-Project;
+                    }
+                }
+            }
+        }
+
+        &__UploadFile {
+
+            .FileUpload {
+
+                &__Label {
+                    background : linear-gradient(to bottom, #fff 44%, #F5F5F5 50%) ;
+                }
+
+                &__FileName {
+                    background-color: #F5F5F5;
+                    color : #0e0e0e ;
+                }
+            }
+        }
+
+        &__Button {
+
+            .Send {
+                background-color: $PrimaryColor-Project;
+                color : $WhiteColor ;
+            }
+
+            .Cancel {
+                background-color: $DangerColor;
+                color : $WhiteColor ;
+            }
+
+            .Clear {
+                background-color: $TertiaryColor-Project;
+                color : $WhiteColor ;
+            }
+        }
+
+        &__FieldReadOnly {
+
+            .FieldReadOnly {
+
+                &__Close {
+
+                    &:hover {
+                        color : $TertiaryColor-Project ;
+                    }
+                }
+
+                &__Label {
+                    background-color: $BackGroundColor_Extra-3;
+                }
+
+                &__Value {
+                    color : $TextColor ;
+                }
+            }
+        }
+
+        &__Tips {
+            color: $BlackColor;
+        }
+
+    }
+
+}
+
+@include Themes(Dark) {
+
+    .Form {
+
+        &__Input ,
+        &__Date ,
+        &__Search ,
+        &__UploadFile ,
+        &__Textarea ,
+        &__FieldReadOnly {
+
+            .Date ,
+            .Input ,
+            .Search ,
+            .UploadFile ,
+            .Textarea ,
+            .FieldReadOnly {
+
+                &__Area {
+                    border : 1px solid $SeparateBorderColor_Extra-1 ;
+                    border-radius: $BorderRadiusValue ;
+
+                    &.Error {
+                        border-color: $DangerColor;
+
+                        .Input__Label {
+                            color : $DangerColor ;
+                        }
+                    }
+                }
+
+                &__Field {
+                    color : $TextColor ;
+                    background-color: transparent;
+
+                    &::placeholder {
+                        color : transparent;
+                    }
+                }
+            }
+        }
+
+        &__Input {
+
+            .Input {
+
+                &__Field {
+
+                    &:-internal-autofill-selected {
+                        background-color: transparent !important;
+                    }
+
+                    &:focus ~ .Input__Label ,
+                    &:not(:placeholder-shown) ~ .Input__Label {
+                        background-color: $BackGroundColor_Extra-3;
+                    }
+
+                }
+
+            }
+        }
+
+        &__Date {
+
+            .Date {
+
+                &__Field {
+
+                    &:not(:placeholder-shown) ~ .Date__Label {
+                        background-color: $BackGroundColor_Extra-3;
+                    }
+                }
+            }
+        }
+
+        &__Textarea {
+
+            .Textarea {
+
+                &__Field {
+
+                    &:focus ~ .Textarea__Label ,
+                    &:not(:placeholder-shown) ~ .Textarea__Label {
+                        background-color: $BackGroundColor_Extra-3;
+                    }
+                }
+            }
+        }
+
+        &__CheckBox {
+
+            .CheckBox {
+
+                &__Input {
+
+                    &:checked {
+
+                        ~ .CheckBox__Label .IconChecked {
+                            background-color: $PrimaryColor-Project;
+                            border-color: $PrimaryColor-Project;
+                        }
+                    }
+                }
+
+                &__Label {
+
+                    .IconChecked {
+                        color : $WhiteColor ;
+                    }
+                }
+
+            }
+        }
+
+        &__Select {
+
+            .Selector ,
+            .MultiSelector {
+
+                &__WordLabel {
+                    background-color: $BackGroundColor;
+                }
+
+                &__Options {
+                    background-color: $BackGroundColor;
+                    border : 1px solid $SeparateBorderColor_Extra-1;
+                }
+
+                &__Option {
+
+                    &:hover {
+                        background-color: $PrimaryColor-Project ;
+                        color : $WhiteColor ;
+                    }
+                }
+            }
+        }
+
+        &__Search {
+
+            .Search {
+
+                &__Field {
+
+                    &::placeholder {
+                        color : inherit;
+                    }
+                }
+            }
+        }
+
+        &__Link {
+
+            .Link {
+
+                &__Anchor {
+                    color: $TextColor;
+
+                    &:hover {
+                        color : $TertiaryColor-Project;
+                    }
+                }
+            }
+        }
+
+        &__UploadFile {
+
+            .FileUpload {
+
+                &__Label {
+                    background-color : $BackGroundColor_Extra-3 ;
+                }
+
+                &__FileName {
+                    color : $TextColor ;
+                }
+            }
+        }
+
+        &__Button {
+
+            .Send {
+                background-color: $PrimaryColor-Project;
+                color : $WhiteColor ;
+            }
+
+            .Cancel {
+                background-color: $DangerColor;
+                color : $WhiteColor ;
+            }
+
+            .Clear {
+                background-color: $TertiaryColor-Project;
+                color : $WhiteColor ;
+            }
+        }
+
+        &__FieldReadOnly {
+
+            .FieldReadOnly {
+
+                &__Close {
+
+                    &:hover {
+                        color : $TertiaryColor-Project ;
+                    }
+                }
+
+                &__Label {
+                    background-color: $BackGroundColor_Extra-3;
+                }
+
+                &__Value {
+                    color : $TextColor ;
+                }
+            }
+        }
+
+        &__Tips {
+            color: #86c1e7;
+        }
+
+    }
+
+}

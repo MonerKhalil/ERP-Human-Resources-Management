@@ -1,0 +1,77 @@
+
+.FooterPage {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    transition: padding $HeaderMenu;
+
+    &__Wrap {
+        background-color: $BackGroundColor_Extra-3;
+    }
+
+    &__Content {
+        padding: 1.5rem 0;
+        font-size: 1.2rem;
+        color : $WhiteColor;
+    }
+
+    &__Links {
+        text-align: right;
+    }
+
+    @include ScreenResponsive(Desktop_Large) {
+
+        & {
+            padding-left : $MenuCollapsed * 1rem ;
+        }
+
+        &.OpenMenu {
+            padding-left : $MenuExpansion * 1rem ;
+        }
+    }
+
+    &--Print {
+
+        & {
+            padding-left : 0 ;
+        }
+
+        &.OpenMenu {
+            padding-left : 0 ;
+        }
+    }
+}
+
+@include Language(Arabic) {
+
+    .FooterPage {
+
+        &__Links {
+            text-align: left;
+        }
+
+        @include ScreenResponsive(Desktop_Large) {
+
+            & {
+                padding-left : 0 ;
+                padding-right : $MenuCollapsed * 1rem ;
+            }
+
+            &.OpenMenu {
+                padding-left : 0 ;
+                padding-right : $MenuExpansion * 1rem ;
+            }
+        }
+
+        &--Print {
+
+            & {
+                padding-right : 0 ;
+            }
+
+            &.OpenMenu {
+                padding-right : 0 ;
+            }
+        }
+    }
+}

@@ -1,0 +1,461 @@
+
+.HeaderPage {
+    position: sticky;
+    top : 0 ;
+    left : 0 ;
+    width: 100%;
+    z-index: $LowLayer;
+    transition: padding $HeaderMenu;
+
+    &__Wrap {
+        width: 100% ;
+        background-color: #1B202D;
+    }
+
+    &__Content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem ;
+    }
+
+    &__MenusOpening {
+
+        .MenusOpening {
+            display: flex;
+            align-items: center;
+
+            > * {
+                padding: 0 .8rem;
+            }
+
+            .MenuIcon {
+                visibility: visible;
+                opacity: 1 ;
+                transition: all .3s;
+            }
+        }
+    }
+
+    &__AccountAlerts {
+
+        .AccountAlerts {
+            display: flex;
+            align-items: center;
+
+            > .UserImage ,
+            .Alert {
+
+                .Dropdown {
+                    position: absolute;
+                    top: calc(100% + 0.9rem);
+                    border-bottom-left-radius: 10px;
+                    transform: scale(.95);
+                    opacity: 0;
+                    visibility: hidden;
+                    overflow: hidden;
+
+                    &.Show {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            > .UserImage {
+                margin: 0 .8rem;
+
+                > img {
+                    cursor: pointer;
+                }
+            }
+
+            .UserImage {
+
+                .Dropdown {
+                    right: 0;
+
+                    > * {
+                        width: 25rem;
+                    }
+
+                    &__Header {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1.5rem;
+                        padding: 1.5rem 2rem;
+                        border-bottom: 1px solid $SeparateBorderColor;
+
+                        .UserImage {
+                            width: 4rem;
+                            height: 4rem;
+                        }
+
+                        .UserDetails {
+                            flex : 1 ;
+
+                            .UserName {
+                                font-size: 1.4rem;
+                                font-weight: 500;
+                                color : $WhiteColor ;
+                                margin-bottom: .2rem;
+                            }
+
+                            .UserEmail {
+                                font-size: 1.2rem;
+                                color : $LightGrayColor;
+                                word-break: break-word;
+                            }
+                        }
+                    }
+
+                    &__Content {
+                        padding: 1rem 2rem;
+                    }
+
+                    &__Item {
+                        a {
+                            display: flex;
+                            align-items: flex-end;
+                            padding: 1rem 0;
+                            gap: .5rem;
+                            color : $GrayColor;
+                            transition: all .3s;
+
+                            i {
+                                font-size: 2rem;
+                            }
+
+                            span {
+                                flex : 1 ;
+                                font-size: 1.4rem;
+                            }
+
+                            &:hover {
+                                color : $TertiaryColor-Project;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .Alerts {
+                display: flex;
+                align-items: center;
+
+                > .Alert {
+                    position: relative;
+                    padding: 0 .8rem;
+
+                    .Dropdown {
+                        right: .8rem;
+                    }
+
+                    &--Language {
+
+                        .Dropdown {
+
+                            &__Item {
+
+                                > a {
+                                    display: block;
+                                    width: 15rem;
+                                    padding: 1rem 1.5rem;
+                                    color : $WhiteColor;
+
+
+                                    &:hover {
+                                        background-color: #171a21;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &--Notification {
+
+                        .Dropdown {
+
+                            > * {
+                                width: 33rem;
+                            }
+
+                            &__Header {
+                                display: flex;
+                                align-items: baseline;
+                                justify-content: space-between;
+                                padding: 1.5rem 2rem;
+                                border-bottom: 1px solid $SeparateBorderColor;
+
+                                .Title {
+                                    color : $SecondaryColor-Project ;
+                                }
+
+                                .ReadAll {
+                                    text-align: right;
+                                    font-size: 1.2rem;
+                                    cursor: pointer;
+                                    transition: color .3s;
+                                    color : $TextColor;
+
+                                    &:hover {
+                                        color : $TertiaryColor-Project ;
+                                    }
+                                }
+                            }
+
+                            &__Content {
+                                max-height: 20rem ;
+                                overflow-y: auto;
+
+                                @include ScrollBar();
+
+                                    .NoData--V2 {
+
+                                    .Icon {
+
+                                        i {
+                                            font-size: 5rem;
+                                        }
+                                    }
+
+                                    .Text {
+                                        font-size: 1.4rem;
+                                    }
+                                }
+
+                            }
+
+                            &__Item {
+
+                                &.Notification {
+                                    padding: 1rem 1.5rem;
+
+                                    &:hover {
+                                        background-color: lighten($BackGroundColor , 3%);
+                                    }
+
+                                    .Notification {
+
+                                        &__Icon {
+                                            width: 4rem;
+
+                                            i {
+                                                font-size: 2rem;
+                                            }
+                                        }
+
+                                        &__Details {
+
+                                            .NotificationTitle {
+                                                font-size: 1.2rem;
+                                                font-weight: 500;
+                                                margin-bottom: 0.5rem;
+                                                line-height: 1.4;
+                                                color : $WhiteColor_Extra-2;
+                                            }
+
+                                            .NotificationDescription {
+                                                font-size: 1.1rem ;
+                                                color : #b2b2b2 ;
+                                            }
+
+                                            .NotificationDate {
+                                                font-size: 1rem;
+                                                font-weight: 400;
+                                            }
+                                        }
+
+                                        &__Remove {
+                                            color : #b2b2b2 ;
+
+                                            i {
+                                                font-size: 1.4rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &__Footer {
+                                padding: 1rem 2rem;
+                                text-align: center;
+                                border-top: 1px solid $SeparateBorderColor;
+
+                                a {
+                                    font-size: 1.2rem;
+                                    color : $TertiaryColor-Project;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include ScreenResponsive(Phone_Landscape) {
+
+        &__Content {
+            flex-direction: column;
+            height: 5rem;
+            padding: .5rem 0;
+        }
+
+        &__MenusOpening {
+            width: 100%;
+
+            .MenusOpening {
+                //flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+        }
+
+        &__AccountAlerts {
+            display: none;
+            width: 100% ;
+
+            &.Open {
+                display: block;
+            }
+
+            .AccountAlerts {
+                justify-content: flex-end;
+            }
+        }
+
+        &.OpenMenu {
+
+            .HeaderPage {
+                &__MenusOpening {
+                    .MenusOpening {
+                        .MenuIcon {
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include ScreenResponsive(Desktop_Large) {
+
+        &:not(.HeaderPage--Print) {
+
+            & {
+                padding-left: $MenuCollapsed * 1rem;
+            }
+
+            &.OpenMenu {
+                padding-left: $MenuExpansion * 1rem;
+            }
+
+            .HeaderPage__MenusOpening {
+
+                .MenusOpening {
+
+                    .Logo {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+@include Language(Arabic) {
+
+    .HeaderPage {
+        top : 0 ;
+        left : initial ;
+        right : 0 ;
+
+        &__AccountAlerts {
+
+            .AccountAlerts {
+
+                .UserImage {
+
+                    .Dropdown {
+                        right: initial ;
+                        left : 0 ;
+                    }
+                }
+
+                .Alerts {
+
+                    .Dropdown {
+                        right: initial;
+                        left: .8rem;
+                    }
+                }
+            }
+        }
+
+        @include ScreenResponsive(Desktop_Large) {
+
+            &:not(.HeaderPage--Print) {
+
+                & {
+                    padding-left: 0;
+                    padding-right: $MenuCollapsed * 1rem;
+                }
+
+                &.OpenMenu {
+                    padding-left: 0;
+                    padding-right: $MenuExpansion * 1rem;
+                }
+
+                .HeaderPage__MenusOpening {
+
+                    .MenusOpening {
+
+                        .Logo {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include Themes(Light) {
+
+    .HeaderPage {
+
+        .IconClick {
+            color : $WhiteColor ;
+
+            &:hover ,
+            &.Active {
+                background-color: rgba($BlackColor , .35);
+            }
+
+        }
+    }
+
+
+}
+
+@include Themes(Dark) {
+
+    .HeaderPage {
+
+        .IconClick {
+            color : $WhiteColor ;
+
+            &:hover ,
+            &.Active {
+                background-color: rgba($BlackColor , .35);
+            }
+
+        }
+    }
+
+}
